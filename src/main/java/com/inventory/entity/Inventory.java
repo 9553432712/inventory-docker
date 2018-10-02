@@ -1,11 +1,13 @@
 package com.inventory.entity;
 
+import java.sql.Date;
+
 public class Inventory {
 	
 	int id;
 	String name;
 	int price;
-	String expire_date;
+	Date expire_date;
 	int prudcttype_id;
 	int quality;
 	int sellin;
@@ -24,7 +26,7 @@ public class Inventory {
 		this.price = price;
 	}
 
-	public void setExpire_date(String expire_date) {
+	public void setExpire_date(Date expire_date) {
 		this.expire_date = expire_date;
 	}
 
@@ -60,7 +62,7 @@ public class Inventory {
 		return price;
 	}
 
-	public String getExpire_date() {
+	public Date getExpire_date() {
 		return expire_date;
 	}
 
