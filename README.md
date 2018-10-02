@@ -3,11 +3,16 @@
 write the following to Docketfile
 
 FROM openjdk:8
+
 ADD target/inventorymngt.jar inventorymngt.jar
+
 EXPOSE 8088
+
 ENTRYPOINT ["java", "-jar", "inventorymngt.jar"]
 
+
 docker build -f Dockerfile -t inventoryspringboot .
+
 docker run -p 8088:8088 inventoryspringboot 
 
 —————pushing the images to docker---------------------------------------------
