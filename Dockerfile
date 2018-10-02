@@ -1,4 +1,4 @@
 FROM openjdk:8
 ADD target/inventorymngt.jar inventorymngt.jar
-EXPOSE 8088
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "inventorymngt.jar"]
