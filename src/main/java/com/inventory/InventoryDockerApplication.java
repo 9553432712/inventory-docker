@@ -1,12 +1,12 @@
-package com.inventory.inventorydocker;
+package com.inventory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.inventory.inventorydocker")
-@ComponentScan(basePackages = "com.inventory.inventorydocker")
+@ComponentScan("com.inventory")
+@ComponentScan(basePackages = "com.inventory")
 public class InventoryDockerApplication {
 
 	public static void main(String[] args) {
