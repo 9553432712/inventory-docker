@@ -6,24 +6,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.inventory.controller.AdminController;
+import com.inventory.controller.TestController;
 import com.inventory.service.AdminService;
 
-@RunWith(MockitoJUnitRunner.class)
-
-public class InventoryDockerApplicationTests {
+public class TestControllerTest {
 	
 	@Mock
 	AdminService adminService;
 	
-	AdminController adminController;
+	TestController adminController;
 	private MockMvc mockMvc;
 	
 	@LocalServerPort
@@ -32,26 +28,20 @@ public class InventoryDockerApplicationTests {
 	@Before
     public void setUp() throws Exception
     {
-        this.adminController = new AdminController();
+        this.adminController = new TestController();
         this.mockMvc = MockMvcBuilders.standaloneSetup(adminController).build();
     }
 	
 	@Test
-    public void getDataReturn400WhenHitWrongURL() throws Exception
+    public void getDataReturn200WhenHitURL() throws Exception
     {
-		assertFalse(false);
-        //when(adminService.getInventory("today")).thenReturn("");
-
         mockMvc.perform(get("/hello"))
-           .andExpect(status().isNotFound());
+           .andExpect(status().isOk());
     }
 	@Test
-    public void getDataReturn200WhenHit() throws Exception
+    public void getDataReturn200WhenHittestURL() throws Exception
     {
-		assertFalse(false);
-        //when(adminService.getInventory("today")).thenReturn("");
-
-        mockMvc.perform(get("/getJsonResponce"))
+        mockMvc.perform(get("/test"))
            .andExpect(status().isOk());
     }
 }

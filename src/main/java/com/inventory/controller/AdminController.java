@@ -26,13 +26,18 @@ public class AdminController {
 	@RequestMapping(value="/getJsonResponce", method = RequestMethod.GET)
 	public String registrationSubmit(@RequestParam(value="date", required = false) String date)
     {
+		System.out.println("--------getJsonResponce--------"+date);
 		try {
+			if(date==null) {
+				date = "today";
+			}
 			System.out.println("video------------------------------"+date);
+			return adminService.getInventory(date);
 		}
 		catch(Exception e) {
 			return "fail";
 		}
-		return adminService.getInventory(date);
+		
     }
 
 }
