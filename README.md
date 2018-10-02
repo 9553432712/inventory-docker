@@ -10,6 +10,7 @@ EXPOSE 8088
 
 ENTRYPOINT ["java", "-jar", "inventorymngt.jar"]
 
+------------In the terminal---------------------------
 
 docker build -f Dockerfile -t inventoryspringboot .
 
