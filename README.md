@@ -1,5 +1,7 @@
 # inventory-docker
 
+
+
 --------------------write the following to Docketfile---------------------------
 
 FROM openjdk:8
